@@ -10,8 +10,8 @@ object ApiClient {
     fun getInstance(): ApiService {
 
         // digunakan untuk logging
-        // debugging melihat apa yang diterima response dari server
-        val mHttpLoggingInterceptor = HttpLoggingInterceptor{ msg -> Log.d("HTTP", msg)}
+        // debuging melihat apa yang diterima response dari server
+        val mHttpLoggingInterceptor = HttpLoggingInterceptor{ msg -> Log.d("HTTP", msg) }
             .setLevel(HttpLoggingInterceptor.Level.BODY)
 
         val mOkHttpClient = OkHttpClient

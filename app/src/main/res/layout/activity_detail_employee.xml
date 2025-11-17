@@ -1,37 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".DetailEmployeeActivity"
-    android:padding="16dp"
-    >
+    android:layout_height="wrap_content"
+    android:layout_margin="24dp"
+    app:cardUseCompatPadding="true"
+    app:cardPreventCornerOverlap="true">
 
-    <TextView
-        android:id="@+id/txt_name"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
-        />
+        android:padding="24dp">
 
-    <TextView
-        android:id="@+id/txt_salary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Salary"
-        />
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/groupaction" />
 
-    <TextView
-        android:id="@+id/txt_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Age"
-        />
+        <TextView
+            android:id="@+id/txt_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Age:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name"
+            app:layout_constraintEnd_toStartOf="@+id/groupaction" />
 
+        <TextView
+            android:id="@+id/txt_salary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Salary:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_age"
+            app:layout_constraintEnd_toStartOf="@+id/groupaction" />
 
+        <LinearLayout
+            android:id="@+id/groupaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-</LinearLayout>
+            <ImageButton
+                android:id="@+id/btnEdit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/outline_border_color_24" />
+
+            <ImageButton
+                android:id="@+id/btnDelete"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/outline_delete_24" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
